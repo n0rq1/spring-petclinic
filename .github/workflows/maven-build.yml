@@ -33,7 +33,7 @@ jobs:
           <settings>
             <servers>
               <server>
-                <id>nexus-releases</id>
+                <id>nexus-snapshots</id>
                 <username>${{ secrets.NEXUS_USERNAME }}</username>
                 <password>${{ secrets.NEXUS_PASSWORD }}</password>
               </server>
