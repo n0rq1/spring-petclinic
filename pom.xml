@@ -20,12 +20,6 @@
     <version>3.1.0</version>
   </parent>
   <name>petclinic</name>
-  <parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.1.0</version>
-  </parent>
-  <name>petclinic</name>
 
   <properties>
 
