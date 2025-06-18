@@ -43,5 +43,5 @@ jobs:
           echo "Created Maven settings file with Nexus credentials"
 
       - name: deploy
-        run: ./mvnw -B clean deploy
+        run: ./mvnw -X -B clean deploy
         
