@@ -33,7 +33,7 @@ jobs:
           <settings>
             <servers>
               <server>
-                <id>nexus-snapshots</id>
+                <id>fuckfuckfuckfuck</id>
                 <username>${{ secrets.NEXUS_USERNAME }}</username>
                 <password>${{ secrets.NEXUS_PASSWORD }}</password>
               </server>

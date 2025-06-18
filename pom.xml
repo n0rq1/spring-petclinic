@@ -6,7 +6,7 @@
   <version>3.1.0-SNAPSHOT</version>
   <distributionManagement>
     <repository>
-      <id>nexus-releases</id>
+      <id>fuckfuckfuckfuck</id>
       <url>https://860f-2603-3006-0-7500-10a3-82f6-7174-5ec7.ngrok-free.app/repository/maven-releases/</url>
     </repository>
     <snapshotRepository>
