@@ -3,15 +3,15 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.springframework.samples</groupId>
   <artifactId>spring-petclinic</artifactId>
-  <version>3.1.0</version>
+  <version>3.1.0-SNAPSHOT</version>
   <distributionManagement>
     <repository>
       <id>fuckfuckfuckfuck</id>
-      <url>http://nexus:8081/repository/fuckfuckfuckfuck/</url>
+      <url>http://nexus:8081/repository/maven-releases/</url>
     </repository>
     <snapshotRepository>
-      <id>nofuck</id>
-      <url>http://nexus:8081/repository/nofuck/</url>
+      <id>fuckfuckfuckfuck</id>
+      <url>http://nexus:8081/repository/maven-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
   <parent>
