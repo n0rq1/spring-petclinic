@@ -7,11 +7,11 @@
   <distributionManagement>
     <repository>
       <id>fuckfuckfuckfuck</id>
-      <url>http://nexus/repository/maven-releases/</url>
+      <url>http://nexus:8081/repository/maven-releases/</url>
     </repository>
     <snapshotRepository>
       <id>nofuck</id>
-      <url>http://nexus/repository/maven-snapshots/</url>
+      <url>http://nexus:8081/repository/maven-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
   <parent>
