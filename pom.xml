@@ -7,11 +7,11 @@
   <distributionManagement>
     <repository>
       <id>nexus-releases</id>
-      <url>http://172.16.38.146:8081/repository/maven-releases/</url>
+      <url>https://860f-2603-3006-0-7500-10a3-82f6-7174-5ec7.ngrok-free.app/repository/maven-releases/</url>
     </repository>
     <snapshotRepository>
       <id>nexus-snapshots</id>
-      <url>http://172.16.38.146:8081/repository/maven-snapshots/</url>
+      <url>https://860f-2603-3006-0-7500-10a3-82f6-7174-5ec7.ngrok-free.app/repository/maven-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
   <parent>
