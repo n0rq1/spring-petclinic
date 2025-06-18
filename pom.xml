@@ -7,11 +7,11 @@
   <distributionManagement>
     <repository>
       <id>fuckfuckfuckfuck</id>
-      <url>https://860f-2603-3006-0-7500-10a3-82f6-7174-5ec7.ngrok-free.app/repository/maven-releases/</url>
+      <url>https://nexus/repository/maven-releases/</url>
     </repository>
     <snapshotRepository>
-      <id>nexus-snapshots</id>
-      <url>https://860f-2603-3006-0-7500-10a3-82f6-7174-5ec7.ngrok-free.app/repository/maven-snapshots/</url>
+      <id>fuckfuckfuckfuck</id>
+      <url>https://nexus/repository/maven-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
   <parent>
