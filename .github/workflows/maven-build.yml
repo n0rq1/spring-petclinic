@@ -1,46 +1,28 @@
-# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
-
-name: Java CI with Maven
-
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [push]
+name: Linux_Container_Workflow
 
 jobs:
-  build:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+        # checkout the repo
+        - name: 'Checkout GitHub Action'
+          uses: actions/checkout@main
+          
+        - name: 'Build and push image'
+          uses: azure/docker-login@v1
+          with:
+            login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
+            username: ${{ secrets.REGISTRY_USERNAME }}
+            password: ${{ secrets.REGISTRY_PASSWORD }}
 
-    runs-on: self-hosted
-    strategy:
-      matrix:
-        java: [ '17' ]
+        - run: |
+            ./mvnw spring-boot:build-image
+            docker tag spring-petclinic:3.1.0 ${{ secrets.REGISTRY_LOGIN_SERVER }}/spring-petclinic:3.1.0
+            docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/spring-petclinic:3.1.0
 
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set up JDK ${{matrix.java}}
-        uses: actions/setup-java@v4
-        with:
-          java-version: ${{matrix.java}}
-          distribution: 'adopt'
-          cache: maven
-      - name: Build with Maven Wrapper
-        run: ./mvnw -B package
-      - name: Create maven settings
-        run: |
-          cat > ~/.m2/settings.xml << EOF
-          <settings>
-            <servers>
-              <server>
-                <id>fuckfuckfuckfuck</id>
-                <username>${{ secrets.NEXUS_USERNAME }}</username>
-                <password>${{ secrets.NEXUS_PASSWORD }}</password>
-              </server>
-            </servers>
-          </settings>
-          EOF
-          echo "Created Maven settings file with Nexus credentials"
-
-      - name: deploy
-        run: ./mvnw -X -B clean deploy
+        - name: 'Run Azure webapp deploy action using publish profile credentials'
+          uses: azure/webapps-deploy@v3
+          with: 
+            app-name: spring-petclinic-1753128135832
+            images: '${{ secrets.REGISTRY_LOGIN_SERVER }}/spring-petclinic:${{ github.sha }}'
